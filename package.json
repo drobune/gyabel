@@ -4,6 +4,7 @@
   "description": "move to gyazo",
   "main": "index.js",
   "dependencies": {
+    "feedparser": "^1.1.4",
     "webshot": "^0.16.0"
   },
   "devDependencies": {},

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+ xmlns="http://purl.org/atom/ns#" xml:lang="ja"
+ xmlns:opensearch="http://a9.com/-/spec/opensearchrss/1.0/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+>
+  <title>an_old_pencil のブックマーク</title>
+  <link type="text/html" rel="alternate" href="http://b.hatena.ne.jp/an_old_pencil/"/>
+  <link type="application/x.atom+xml" rel="service.post" href="http://b.hatena.ne.jp/atom/post" title="an_old_pencil のブックマーク"/>
+
+
+  <entry>
+    <id>tag:hatena.ne.jp,2005:bookmark-an_old_pencil-275605171</id>
+    <title>ブロックチェーンというよりむしろテックビューロ、朝山貴生社長が醸し出す香りにこぞって乗っかるマーケット : 市況かぶ全力２階建</title>
+    <link type="text/html" rel="alternate" href="http://kabumatome.doorblog.jp/archives/65848621.html"/>
+    <link type="text/html" rel="alternate" href="http://b.hatena.ne.jp/an_old_pencil/20160106#bookmark-275605171"/>
+    <link type="application/x.atom+xml" rel="service.edit" title="ブロックチェーンというよりむしろテックビューロ、朝山貴生社長が醸し出す香りにこぞって乗っかるマーケット : 市況かぶ全力２階建" href="http://b.hatena.ne.jp/atom/edit/275605171"/>
+    <summary></summary>
+
+    <issued>2016-01-06T15:37:32+09:00</issued>
+    <author>
+      <name>an_old_pencil</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:hatena.ne.jp,2005:bookmark-an_old_pencil-275650759</id>
+    <title>フィットビットに集団訴訟　心拍数モニター・デバイスの性能が広告通りでないことを理由に - Market Hack</title>
+    <link type="text/html" rel="alternate" href="http://markethack.net/archives/51994383.html"/>
+    <link type="text/html" rel="alternate" href="http://b.hatena.ne.jp/an_old_pencil/20160106#bookmark-275650759"/>
+    <link type="application/x.atom+xml" rel="service.edit" title="フィットビットに集団訴訟　心拍数モニター・デバイスの性能が広告通りでないことを理由に - Market Hack" href="http://b.hatena.ne.jp/atom/edit/275650759"/>
+    <summary>さっきfitbit見てた</summary>
+
+    <issued>2016-01-06T15:35:38+09:00</issued>
+    <author>
+      <name>an_old_pencil</name>
+    </author>
+  </entry>
+</feed>
