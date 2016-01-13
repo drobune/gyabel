@@ -7,24 +7,40 @@ var webshot = require('webshot'),
 
 const gyazoId = fs.readFileSync(process.env.HOME + '/.gyazo.id', 'utf8')
 
+var items = []
 
-fs.createReadStream('./data/test')
+fs.createReadStream('./data/test2')
   .on('error', function (error) {
     console.error(error)
   })
+
   .pipe(new FeedParser())
+
   .on('error', function (error) {
     console.error(error)
   })
+
   .on('meta', function (meta) {
     console.log('===== %s =====', meta.title)
   })
+
   .on('readable', function() {
     var stream = this, item
     while (item = stream.read()) {
       console.log('Got article: %s', item.title || item.description)
-      capture(item.date, item.title, item.link)
+      items.push(item)
     }
+  })
+  .on('end', function() {
+    console.log(items.length)
+    var i = 0, l = items.length
+    function delayCapture() {
+      capture(items[i].date, items[i].title, items[i].link)
+      if(++i<l){
+        setTimeout(delayCapture, 5000)
+      }
+    }
+    delayCapture()
   })
 
 function capture (id, title, link){
