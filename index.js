@@ -38,6 +38,8 @@ fs.createReadStream('./dump')
       capture(items[i].date, items[i].title, items[i].link)
       if(++i<l){
         setTimeout(delayCapture, 5000)
+      } else {
+        return
       }
     }
     delayCapture()
