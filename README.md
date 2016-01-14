@@ -11,7 +11,7 @@ Read feeds, capture their website links, and gyazo with metadata.
 ## How to Use
 
 - Locate your gyazo id file to `$HOME/.gyazo.id`
-- `$./bin/gyabel {file path}`
+- `$./bin/gyabel {your feed filepath}`
 
 ## License
 
