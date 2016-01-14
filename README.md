@@ -1,5 +1,6 @@
 # gyabel
 Migration tool to gyazo from RSS, Atom, RDF feeds(local file).
+
 Read feeds, capture their website links, and gyazo with metadata.
 
 # Dependency
@@ -9,5 +10,5 @@ Read feeds, capture their website links, and gyazo with metadata.
 
 # How to Use
 
-- `./bin/gyabel {feed file path}`
+- `$./bin/gyabel {file path}`
 
