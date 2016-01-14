@@ -1,0 +1,4 @@
+#!/bin/bash
+sed -e 's/related/alternate/g' $1 > ./data/dump       
+node ../index.js
+rm temp/*
