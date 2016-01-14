@@ -9,7 +9,7 @@ const gyazoId = fs.readFileSync(process.env.HOME + '/.gyazo.id', 'utf8')
 
 var items = []
 
-fs.createReadStream('./data/dump')
+fs.createReadStream('./dump')
   .on('error', function (error) {
     console.error(error)
   })

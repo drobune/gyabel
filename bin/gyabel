@@ -1,4 +1,4 @@
 #!/bin/bash
-sed -e 's/related/alternate/g' $1 > ./data/dump       
+sed -e 's/related/alternate/g' $1 > .//dump
 node ../index.js
 rm temp/*
