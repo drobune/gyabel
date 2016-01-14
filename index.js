@@ -9,7 +9,7 @@ const gyazoId = fs.readFileSync(process.env.HOME + '/.gyazo.id', 'utf8')
 
 var items = []
 
-fs.createReadStream('./data/test2')
+fs.createReadStream('./data/dump')
   .on('error', function (error) {
     console.error(error)
   })
@@ -32,7 +32,7 @@ fs.createReadStream('./data/test2')
     }
   })
   .on('end', function() {
-    console.log(items.length)
+    console.log('Got %d articles', items.length)
     var i = 0, l = items.length
     function delayCapture() {
       capture(items[i].date, items[i].title, items[i].link)
@@ -44,27 +44,14 @@ fs.createReadStream('./data/test2')
   })
 
 function capture (id, title, link){
-  //var renderStream = webshot(link)
-  //renderStream.setMaxListeners(2)
-  //  renderStream.on('finish', function(data) {
-  //  writeImage(data)
-  //})
   var tmpImagePath = './temp/' + id + '.png'
   webshot(link, tmpImagePath, function(err){
+    if (err) {
+      return
+    }
     gyazo(tmpImagePath, title, link)
   })
 }
-
-function writeImage (data){
-  var file = fs.createWriteStream('./temp/' + id, {encoding: 'binary'})
-  file.write(data.toString('binary'), 'binary')
-  file.end()
-  file.on('finish', function() {
-    console.log('all writes are now complete.')
-  })
-}
-
-
 
 function gyazo (image_path, title, url){
   /* うまくいかなかった
@@ -91,13 +78,16 @@ function gyazo (image_path, title, url){
      }
      )
   */
-  var form = new FormData()
-  form.append('id', gyazoId)
-  form.append('metadata', JSON.stringify({ app: 'gyabel', title: title, url: url}))
-  form.append('imagedata', fs.createReadStream(image_path))
+  try {
+    var form = new FormData()
+    form.append('id', gyazoId)
+    form.append('metadata', JSON.stringify({ app: 'gyabel', title: title, url: url}))
+    form.append('imagedata', fs.createReadStream(image_path))
 
-  form.submit('http://upload.gyazo.com/upload.cgi', function(err, res) {
-    res.resume()
-  })
-
+    form.submit('http://upload.gyazo.com/upload.cgi', function(err, res) {
+      res.resume()
+    })
+  } catch(e) {
+    console.log(e)
+  }
 }
